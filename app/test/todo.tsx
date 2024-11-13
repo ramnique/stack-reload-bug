@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { getUserName } from '../actions';
+import { getUserDisplayName } from '../actions';
 
 export default function TodoList() {
   const [todos, setTodos] = useState<string[]>([]);
@@ -17,8 +17,8 @@ export default function TodoList() {
   };
 
   const getName = async () => {
-    const result = await getUserName();
-    setUserName(result.userEmail || 'null');
+    const result = await getUserDisplayName();
+    setUserName(result.displayName || 'null');
   };
 
   return (
